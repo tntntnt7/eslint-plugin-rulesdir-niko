@@ -14,6 +14,7 @@ if (!fs.existsSync(SYMLINK_LOCATION)) {
 }
 
 require('.').RULES_DIR = path.resolve('fake-rule-dir-one');
+require('.').CLONE_RULES = ['fake-rule'];
 
 module.exports = {
   extends: 'airbnb-base',
@@ -24,6 +25,7 @@ module.exports = {
     'global-require': 'off',
     'import/no-dynamic-require': 'off',
     'rulesdir/fake-rule': 'error',
+    'rulesdir/fake-rule-c': 'warn',
   },
   plugins: [PACKAGE_NAME],
 };
